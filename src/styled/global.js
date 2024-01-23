@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
+
 export const GlobalStyle =  createGlobalStyle`
     * {
         margin: 0;
@@ -12,7 +13,7 @@ export const GlobalStyle =  createGlobalStyle`
     }
 
     body, input, textarea, button {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Roboto';
         font-weight: 400;
         --webkit-font-smoothing: antialiased;
     }

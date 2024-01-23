@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import marginProps from '../../styled/shared-props/margin';
-import paddingProps from '../../styled/shared-props/padding';
+import marginProps from '../shared-props/margin';
+import paddingProps from '../shared-props/padding';
 
 export const StyledSvg = styled.svg`
     width: 100%;

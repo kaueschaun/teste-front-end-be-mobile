@@ -1,4 +1,4 @@
-import { StyledSvg } from "../styled/UI/StyledSvg";
+import { StyledSvg } from '../../styled/UI/StyledSvg';
 import Protypes from 'prop-types'
 
 function Icon({
