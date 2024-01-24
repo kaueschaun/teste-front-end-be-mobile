@@ -8,9 +8,12 @@ export const StyledTitle = styled.p`
      font-weight: ${fonts.weight.regular};
      ${marginProps};
      ${paddingProps};
-
+      
      ${({ color }) => color && css`
         color: ${color}
+     `};
+     ${({ fontWeight }) => fontWeight === 'light' && css`
+        font-weight: ${fonts.weight.light}
      `};
      ${({ name }) => name === 'title' && css`
         font-size: ${fonts.sizes.title};
@@ -24,12 +27,16 @@ export const StyledTitle = styled.p`
 `;
 
 export const StyledSubtitle = styled.p`
-    font-weight: ${fonts.weight.light};
+    font-weight: ${fonts.weight.normal};
     ${marginProps};
     ${paddingProps};
     
     ${({ color }) => color && css`
         color: ${color}
+     `};
+
+     ${({ fontWeight }) => fontWeight === 'regular' && css`
+        font-weight: ${fonts.weight.regular}
      `};
 
     ${({ name }) => name === 'subtitle' && css`

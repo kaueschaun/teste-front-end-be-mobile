@@ -14,6 +14,7 @@ function Text({
     // action props
     name,
     type,
+    fontWeight,
     decoration,
     color,
     ellipsisAt,
@@ -26,6 +27,7 @@ function Text({
                     name={name}
                     type={type}
                     color={color}
+                    fontWeight={fontWeight}
                     marginTop={marginTop}
                     marginRight={marginRight}
                     marginBottom={marginBottom}
@@ -47,6 +49,7 @@ function Text({
                     name={name}
                     type={type}
                     color={color}
+                    fontWeight={fontWeight}
                     marginTop={marginTop}
                     marginRight={marginRight}
                     marginBottom={marginBottom}
@@ -61,26 +64,6 @@ function Text({
                 </StyledSubtitle>
             );
         }
-
-        return (
-            <StyledParagraph
-                name={name}
-                type={type}
-                color={color}
-                decoration={decoration}
-                marginTop={marginTop}
-                marginRight={marginRight}
-                marginBottom={marginBottom}
-                marginLeft={marginLeft}
-                paddingTop={paddingTop}
-                paddingRight={paddingRight}
-                paddingBottom={paddingBottom}
-                paddingLeft={paddingLeft}
-                ellipsisAt={ellipsisAt}
-            >
-                {children}
-            </StyledParagraph>
-        );
     };
 
     return renderText();
@@ -92,7 +75,7 @@ Text.propTypes = {
     type: PropTypes.oneOf(['normal']),
 
     name: PropTypes.oneOf([
-        'hero',
+        'subtitle',
         'title',
     ])
 };

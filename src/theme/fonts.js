@@ -4,7 +4,7 @@ const fonts = {
         subtitle: '16px'
     },
     weight: {
-        light: 400,
+        normal: 400,
         regular: 500
     },
 }

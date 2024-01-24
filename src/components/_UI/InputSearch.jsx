@@ -26,7 +26,6 @@ const StyledInput = styled(Row)`
     justify-content: space-between;
     width: 100%;
     position: relative;
-    margin-top: 20px;
 `;
 const ContentIcon = styled.div`
     width: 24px;

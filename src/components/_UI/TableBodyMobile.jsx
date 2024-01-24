@@ -5,9 +5,13 @@ import colors from '../../theme/colors'
 import Text from './Text'
 import Icon from './Icon'
 import { Column } from '../../styled/alignment/Column'
-
-export default function TableBodyMobile({data}) {
+import breakpoints from '../../theme/breakpoints'
+import date from '../../helpers/date'
+import phoneFormatter from '../../helpers/phone'
+export default function  TableBodyMobile({data}) {
     const [content, setContent] = useState(data)
+    const formatDate = (dateContent) => date.format(dateContent);
+
 
     useEffect(() => {
         setContent(data.map(el => ({ ...el, visible: false })));
@@ -24,18 +28,18 @@ export default function TableBodyMobile({data}) {
           });
         });
       }
-  return (
+  return ( 
     <Container>
         <Content>
             {content?.map((item, index) => (
                 <>
                     <StyledBody key={index}>
-                        <StyledRow verticalCenter>
+                        <StyledRow>
                             <StyledImage>
-                                <Icon name='avatar-woman' />
+                                <Icon name='avatar-men-two' />
                             </StyledImage>
                             <ContentItem>
-                                <Text name='subtitle'>{item.name}</Text>
+                                <Text name='subtitle' data-th='name'>{item.name}</Text>
                             </ContentItem>
                             <Arrow 
                                 view={item.visible}
@@ -47,16 +51,16 @@ export default function TableBodyMobile({data}) {
                                 toogle={item.visible}
                             >   
                                 <ContentData>
-                                    <Text name='subtitle'>Cargo</Text>
-                                    <Text name='subtitle'>Front-end</Text>
+                                    <Text name='subtitle' fontWeight='regular'>Cargo</Text>
+                                    <Text name='subtitle'>{item.job}</Text>
                                 </ContentData>
                                 <ContentData>
-                                    <Text name='subtitle'>Data de admissão</Text>
-                                    <Text name='subtitle'>00/00/0000</Text>
+                                    <Text name='subtitle' fontWeight='regular'>Data de Admissão</Text>
+                                    <Text name='subtitle'>{formatDate(item.data_admissao)}</Text>
                                 </ContentData>
                                 <ContentData>
-                                    <Text name='subtitle'>Telefone</Text>
-                                    <Text name='subtitle'>+55 (00) 00000-0000</Text>
+                                    <Text name='subtitle' fontWeight='regular'>Telefone</Text>
+                                    <Text name='subtitle'>{phoneFormatter(item.telefone)}</Text>
                                 </ContentData>
                             </ContentExtend>
                         </StyledRow>
@@ -68,34 +72,36 @@ export default function TableBodyMobile({data}) {
   )
 }
 
-const Container = styled(Column)`
+const Container = styled.tbody`
     background: ${colors.white};
     display: flex;
     align-items: center;
     position: relative;
     height: auto;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.20);
+    @media screen and (min-width: ${breakpoints.lg}) {
+        display: none;
+    }
 `;
 
-const StyledRow = styled(Row)`
+const StyledRow = styled.tr`
     display: flex;
     align-items: center;
     justify-content: space-between;
 `
 
 const Content = styled(Column)`
-    /* border: 0.5 solid rgba(0, 0, 0, 0.20); */
+    width: 100%
 `
 
-const StyledBody = styled(Column)`
+const StyledBody = styled.td`
     justify-content: space-between;
-    align-items: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.20);
     padding: 15px 20px;
 
 `;
 
-const ContentItem = styled.div`
+const ContentItem = styled.td`
     text-align: left;
     display: flex;
     width: 33,3%;
@@ -116,7 +122,7 @@ const Arrow = styled.div`
     `}
 `;
 
-const StyledImage = styled.div`
+const StyledImage = styled.tr`
     width: 33px;
     height: 33px;
     background: red;

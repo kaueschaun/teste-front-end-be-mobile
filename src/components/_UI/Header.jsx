@@ -14,7 +14,7 @@ const Container = styled.header`
     width: 100%;
     height: 60px;
     background: ${colors.primaryDark};
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     display: flex;
