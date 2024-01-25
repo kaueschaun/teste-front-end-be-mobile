@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import {Column} from '../../styled/alignment/Column'
 import Header from '../_UI/Header';
 import breakpoints from '../../theme/breakpoints';
+import sizes from '../../theme/sizes';
 
 export default function Content({children}) {
   return (
@@ -18,17 +19,12 @@ export default function Content({children}) {
 
 const Container = styled(Column)`
     width: 100%;
-    padding: 10px 18px;
+    padding: ${sizes.tiny} ${sizes.intermediary};
     @media screen and(min-width: ${breakpoints.lg}){
-        padding: 10px 30px;
+        padding: ${sizes.tiny} ${sizes.bigLarge};
     }
 `;
 
-const StyledContent = styled.div`
-    /* padding: 10px 20px; */
-    /* background: green; */
+const StyledContent = styled(Column)`
+    width: 100%;
 `;
-
-const ContentTitle = styled.div`
-    margin-top: 80px;
-`

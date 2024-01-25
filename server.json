@@ -1,0 +1,30 @@
+{
+    "employees": [
+        {
+            "id": 1,
+            "name": "Julia Lacerda",
+            "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-uma-pessoa-com-oculos-de-sol_23-2149436178.jpg?w=740&t=st=1706147114~exp=1706147714~hmac=6dce309102470b85d53195c36eaa6328ed90bc9f73fa4e3882cb1a64d63aad04",
+            "job": "Designer",
+            "phone": "53989123923",
+            "admission": "2019-10-20"
+          },
+          {
+            "id": 2,
+            "name": "Roberto Mota",
+            "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-uma-pessoa-com-oculos-de-sol_23-2149436188.jpg?w=740&t=st=1706146940~exp=1706147540~hmac=e3f02cf0007a450b2aa8b2951b9e205e2b8f46c804599107a555530061ddc841",
+            "job": "Designer",
+            "phone": "53999752666",
+            "admission": "2015-01-04"
+          },
+          {
+            "id": 3,
+            "name": "Ricardo Silva",
+            "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-avatar-ou-perfil-humano_23-2150671116.jpg?w=740&t=st=1706147185~exp=1706147785~hmac=24271e87b49ae11e6d073aa6a36421ad05d3a5126a91b2503257e86951917ec3",
+            "job": "Front-end",
+            "phone": "549817623415",
+            "admission": "2020-05-10"
+          }
+        ]
+        
+}
+  

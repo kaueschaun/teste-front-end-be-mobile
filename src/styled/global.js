@@ -1,10 +1,11 @@
 import { createGlobalStyle } from "styled-components";
+import sizes from "../theme/sizes";
 
 
 export const GlobalStyle =  createGlobalStyle`
     * {
-        margin: 0;
-        padding: 0;
+        margin: ${sizes.none};
+        padding: ${sizes.none};
         box-sizing: border-box;
     }
 

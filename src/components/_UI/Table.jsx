@@ -4,11 +4,12 @@ import fonts from '../../theme/fonts';
 import TableBodyMobile from './TableBodyMobile';
 import breakpoints from '../../theme/breakpoints'
 import TableBodyDesktop from './TableBodyDesktop';
+import sizes from '../../theme/sizes';
 
 export default function Table({
     columns,
-    rows
-}) {
+    rows,
+}) {  
   return (
     <StyledTable>
       <TableHeader>
@@ -16,15 +17,17 @@ export default function Table({
             <TableHeaderItem key={index}>{item}</TableHeaderItem>
          ))}
       </TableHeader>
+       
       <TableBodyMobile data={rows} />
       <TableBodyDesktop data={rows} />
+
     </StyledTable>
   )
 }
 
 const StyledTable = styled.table`
-  margin-top: 20px;
-  border-radius: 4px 4px 0 0;
+  margin-top: ${sizes.medium};
+  border-radius: ${sizes.nano};
   width: 100%;
 `;
 
@@ -33,18 +36,18 @@ const TableHeader = styled.thead`
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-radius: 4px 4px 0 0;
-  padding: 15px 20px;
+  border-radius: ${sizes.nano};
+  padding: ${sizes.small} ${sizes.medium};
   width: 100%;
   &:after{
     content: ' ';
-    width: 8px;
-    min-width: 8px;
-    max-width: 20px;
-    height: 8px;
+    width: ${sizes.mini};
+    min-width: ${sizes.mini};
+    max-width: ${sizes.medium};
+    height: ${sizes.mini};
     background: white;
     border-radius: 50%;
-    margin-right: 5px;
+    margin-right: ${sizes.nano};
   }
   @media screen and (min-width: ${breakpoints.lg}) {
     &:after{
@@ -58,7 +61,7 @@ const TableHeaderItem = styled.td`
    color: ${colors.light};
    font-size: ${fonts.sizes.subtitle};
    font-weight: ${fonts.weight.regular};
-   margin-right: 10px; 
+   margin-right: ${sizes.tiny}; 
    align-items: center;
    display: none;
    width: 100%;

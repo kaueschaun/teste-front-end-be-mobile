@@ -3,6 +3,7 @@ import Text from './Text';
 import breakpoints from '../../theme/breakpoints';
 import date from '../../helpers/date'
 import phoneFormatter from '../../helpers/phone'
+import sizes from '../../theme/sizes';
 
 export default function TableBodyDesktop({data}) {
   const formatDate = (dateContent) => date.format(dateContent);
@@ -12,9 +13,11 @@ export default function TableBodyDesktop({data}) {
       {data?.map((item) => (
         <Content key={item.id}>
           <StyledItem>
-            
             <StyledImage>
-
+              {
+                item.image &&
+                  <Image src={item.image}/>
+              }
             </StyledImage>
           </StyledItem>
 
@@ -31,11 +34,11 @@ export default function TableBodyDesktop({data}) {
            </StyledItem>
 
            <StyledItem>
-              <Text name='subtitle'>{item.data_admissao ? formatDate(item.data_admissao) : 'Não Informado'}</Text>  
+              <Text name='subtitle'>{item.admission ? formatDate(item.admission) : 'Não Informado'}</Text>  
            </StyledItem>
 
            <StyledItem>
-              <Text name='subtitle'>{item.telefone ? phoneFormatter(item.telefone) : 'Não Informado'}</Text>  
+              <Text name='subtitle'>{item.phone ? phoneFormatter(item.phone) : 'Não Informado'}</Text>  
            </StyledItem>
         </Content>
       ))}
@@ -49,7 +52,7 @@ const StyledBody = styled.tbody`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.20);
+    box-shadow: ${sizes.none} 1px 2px 0px rgba(0, 0, 0, 0.20);
   }
 `;
 
@@ -68,7 +71,7 @@ const StyledItem = styled.td`
   align-items: center;
   justify-content: center;
   width: 30%;
-  margin-right: 10px;
+  margin-right: ${sizes.tiny};
 `;
 
 const ContainerText = styled.td`
@@ -86,10 +89,15 @@ const ContentText = styled.td`
 `;
 const StyledImage = styled.td`
   display: flex;
-  width: 33px;
-  background: red;
+  width: ${sizes.grand};
   height: 33px;
   border-radius: 50%;
   justify-content: flex-end;
   
 `;
+
+const Image = styled.img`
+  border-radius: 50%;
+  width: ${sizes.grand};
+  height: 33px;
+`

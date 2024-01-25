@@ -7,12 +7,20 @@ import fonts from "../../theme/fonts";
 
 export default function InputSearch({
     placeholder,
+    onChangeValue,
 }  
 ) {
+    
+    const toggleValue = (e) => {
+        onChangeValue(e || false);
+    };
+
+
   return (
    <StyledInput>
      <Input 
         placeholder={placeholder}
+        onChange={(e) => toggleValue(e.target.value)}
      />
         <ContentIcon>
             <Icon name='search' />
@@ -28,20 +36,25 @@ const StyledInput = styled(Row)`
     position: relative;
 `;
 const ContentIcon = styled.div`
-    width: 24px;
-    height: 24px;
+    width: ${sizes.big};
+    height: ${sizes.big};
     position: absolute;
-    right: 10px;
+    right: ${sizes.tiny};
     top: 20%;
     
-`
+`;
 const Input = styled.input`
     width: 100%;
-    text-indent: 10px;
-    padding: 10px;
+    text-indent: ${sizes.tiny};
+    padding: ${sizes.tiny};
     padding-right: 45px;
     border-radius: ${sizes.nano};
-    border: 1px solid #CDCDCD;
-    color: #CDCDCD;
-    font-weight: ${fonts.weight.light}
+    border: 1px solid ${colors.secondary};
+    color: ${colors.secondary};
+    font-weight: ${fonts.weight.light};
+    &:focus {
+        border-bottom: 2px solid ${colors.primaryLight};
+        color: ${colors.primaryDark};
+
+    }
 `;
