@@ -15,7 +15,6 @@ function Text({
     name,
     type,
     fontWeight,
-    decoration,
     color,
     ellipsisAt,
     children
@@ -82,8 +81,8 @@ Text.propTypes = {
 
 Text.defaultProps = {
     color: 'black',
-    type: 'light',
-    name: 'default',
+    type: 'normal',
+    name: 'title',
     decoration: 'none'
 };
 

@@ -10,9 +10,11 @@ export default function Loader({size, color}) {
 }
 
 Loader.defaultProps = {
-    size: 'default'
+  size: 'default',
+  color: 'default', 
 };
 
 Loader.propTypes = {
-    size: PropTypes.oneOf(['default', 'medium', 'large'])
+  size: PropTypes.oneOf(['default', 'medium', 'large']),
+  color: PropTypes.oneOf(['default', 'primary', 'secondary']) 
 };

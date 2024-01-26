@@ -5,6 +5,8 @@ import TableBodyMobile from './TableBodyMobile';
 import breakpoints from '../../theme/breakpoints'
 import TableBodyDesktop from './TableBodyDesktop';
 import sizes from '../../theme/sizes';
+import PropTypes from 'prop-types';
+
 
 export default function Table({
     columns,
@@ -14,7 +16,9 @@ export default function Table({
     <StyledTable>
       <TableHeader>
          {columns?.map((item, index) => (
-            <TableHeaderItem key={index}>{item}</TableHeaderItem>
+            <TableHeaderItem key={index}>
+                {item}
+            </TableHeaderItem>
          ))}
       </TableHeader>
        
@@ -25,13 +29,13 @@ export default function Table({
   )
 }
 
-const StyledTable = styled.table`
-  margin-top: ${sizes.medium};
+const StyledTable = styled.div`
+  margin-top: ${sizes.giant};
   border-radius: ${sizes.nano};
   width: 100%;
 `;
 
-const TableHeader = styled.thead`
+const TableHeader = styled.div`
   background: ${colors.primaryLight};
   display: flex;
   flex-direction: row;
@@ -45,9 +49,9 @@ const TableHeader = styled.thead`
     min-width: ${sizes.mini};
     max-width: ${sizes.medium};
     height: ${sizes.mini};
-    background: white;
+    background: ${colors.white};
     border-radius: 50%;
-    margin-right: ${sizes.nano};
+    margin-right: 1.25em;
   }
   @media screen and (min-width: ${breakpoints.lg}) {
     &:after{
@@ -56,7 +60,7 @@ const TableHeader = styled.thead`
   }
 `;
 
-const TableHeaderItem = styled.td`
+const TableHeaderItem = styled.div`
    text-align: left;
    color: ${colors.light};
    font-size: ${fonts.sizes.subtitle};
@@ -65,6 +69,7 @@ const TableHeaderItem = styled.td`
    align-items: center;
    display: none;
    width: 100%;
+   background: transparent;
    
    &:first-child,
    &:nth-child(2) {
@@ -78,3 +83,8 @@ const TableHeaderItem = styled.td`
 
 `;
 
+
+Table.propTypes = {
+  columns: PropTypes.array.isRequired,
+  rows: PropTypes.array.isRequired,
+};

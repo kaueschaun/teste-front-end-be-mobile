@@ -12,17 +12,23 @@ export default function Header() {
   )
 }
 const Container = styled.header`
-    width: 100%;
-    height: ${sizes.tremendous};
-    background: ${colors.primaryDark};
-    position: absolute;
-    top: ${sizes.none};
-    left: ${sizes.none};;
-    display: flex;
-    align-items: center;
+  width: 100%;
+  height: ${sizes.tremendous};
+  background: ${colors.primaryDark};
+  position: absolute;
+  top: ${sizes.none};
+  left: ${sizes.none};;
+  display: flex;
+  align-items: center;
 `;
 const ContentIcon = styled.div`
-    width: 120px;
-    height: 35px;
-    padding-left: ${sizes.medium};
+  background: ${colors.white};
+  width: 120px;
+  height: 35px;
+  padding-left: ${sizes.medium};
+  background: ${colors.primaryDark};
+
+  & > svg {
+    background: ${colors.primaryDark};
+  }
 `;

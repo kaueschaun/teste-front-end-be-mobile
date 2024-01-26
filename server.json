@@ -1,30 +1,78 @@
 {
-    "employees": [
-        {
-            "id": 1,
-            "name": "Julia Lacerda",
-            "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-uma-pessoa-com-oculos-de-sol_23-2149436178.jpg?w=740&t=st=1706147114~exp=1706147714~hmac=6dce309102470b85d53195c36eaa6328ed90bc9f73fa4e3882cb1a64d63aad04",
-            "job": "Designer",
-            "phone": "53989123923",
-            "admission": "2019-10-20"
-          },
-          {
-            "id": 2,
-            "name": "Roberto Mota",
-            "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-uma-pessoa-com-oculos-de-sol_23-2149436188.jpg?w=740&t=st=1706146940~exp=1706147540~hmac=e3f02cf0007a450b2aa8b2951b9e205e2b8f46c804599107a555530061ddc841",
-            "job": "Designer",
-            "phone": "53999752666",
-            "admission": "2015-01-04"
-          },
-          {
-            "id": 3,
-            "name": "Ricardo Silva",
-            "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-avatar-ou-perfil-humano_23-2150671116.jpg?w=740&t=st=1706147185~exp=1706147785~hmac=24271e87b49ae11e6d073aa6a36421ad05d3a5126a91b2503257e86951917ec3",
-            "job": "Front-end",
-            "phone": "549817623415",
-            "admission": "2020-05-10"
-          }
-        ]
-        
+  "employees": [
+     {
+        "id": 1,
+        "name": "Julia Lacerda",
+        "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-uma-pessoa-com-oculos-de-sol_23-2149436178.jpg?w=740&t=st=1706147114~exp=1706147714~hmac=6dce309102470b85d53195c36eaa6328ed90bc9f73fa4e3882cb1a64d63aad04",
+        "job": "Designer",
+        "phone": "53989123923",
+        "admission": "2019-10-20"
+      },
+      {
+        "id": 2,
+        "name": "Roberto Mota",
+        "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-uma-pessoa-com-oculos-de-sol_23-2149436188.jpg?w=740&t=st=1706146940~exp=1706147540~hmac=e3f02cf0007a450b2aa8b2951b9e205e2b8f46c804599107a555530061ddc841",
+        "job": "Scrum M",
+        "phone": "53999752666",
+        "admission": "2015-01-04"
+      },
+      {
+        "id": 3,
+        "name": "Ricardo Silva",
+        "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-avatar-ou-perfil-humano_23-2150671116.jpg?w=740&t=st=1706147185~exp=1706147785~hmac=24271e87b49ae11e6d073aa6a36421ad05d3a5126a91b2503257e86951917ec3",
+        "job": "Front-end",
+        "phone": "549817623415",
+        "admission": "2020-05-10"
+      },
+      {
+        "id": 4,
+        "name": "Solange Braga",
+        "image": "https://img.freepik.com/psd-gratuitas/renderizacao-3d-do-personagem-avatar_23-2150611716.jpg?w=740&t=st=1706165997~exp=1706166597~hmac=4dfb314beb0790e3e5736aaa7a32285b9406a5c8a2aa3d91a6d5244e8ca2afea",
+        "job": "Designer",
+        "phone": "51984567704",
+        "admission": "2010-02-04"
+      },
+      {
+        "id": 5,
+        "name": "Felipe L Neves",
+        "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-avatar-ou-perfil-humano_23-2150671159.jpg?w=740&t=st=1706166028~exp=1706166628~hmac=f2ab7e1ed4daeaff0848c45601a9579c802b20969d3faa3f85e043c747dd90a1",
+        "job": "Back-end",
+        "phone": "53999534312",
+        "admission": "2020-09-17"
+      },
+      {
+        "id": 6,
+        "name": "Nathan S Silva",
+        "image": "https://img.freepik.com/psd-premium/menino-dos-desenhos-animados-3d-sorrindo-retrato-isolado-em-fundo-transparente-png-psd_888962-1548.jpg?w=826",
+        "job": "Gestor",
+        "phone": "54981654124",
+        "admission": "2019-12-01"
+      },
+      {
+        "id": 7,
+        "name": "Marina Ferreira",
+        "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-uma-pessoa-com-oculos_23-2149436191.jpg?w=740&t=st=1706166200~exp=1706166800~hmac=78d7c975064bb8389dfd48863e1b0db2abe46a5e5689b5efcedaff6e97c63a7b",
+        "job": "Analista",
+        "phone": "51984988765",
+        "admission": "2015-09-10"
+      },
+      {
+        "id": 7,
+        "name": "Marina Ferreira",
+        "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-uma-pessoa-com-oculos_23-2149436191.jpg?w=740&t=st=1706166200~exp=1706166800~hmac=78d7c975064bb8389dfd48863e1b0db2abe46a5e5689b5efcedaff6e97c63a7b",
+        "job": "Analista",
+        "phone": "51984988765",
+        "admission": "2015-09-10"
+      },
+      {
+        "id": 7,
+        "name": "Marina Ferreira",
+        "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-uma-pessoa-com-oculos_23-2149436191.jpg?w=740&t=st=1706166200~exp=1706166800~hmac=78d7c975064bb8389dfd48863e1b0db2abe46a5e5689b5efcedaff6e97c63a7b",
+        "job": "Analista",
+        "phone": "51984988765",
+        "admission": "2015-09-10"
+      }
+    ]
+          
 }
   

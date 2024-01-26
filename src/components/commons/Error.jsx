@@ -1,35 +1,28 @@
 import styled from 'styled-components'
 import { Column } from '../../styled/alignment/Column'
+import Text from '../_UI/Text';
+import colors from '../../theme/colors';
 import Icon from '../_UI/Icon';
 import { Row } from '../../styled/alignment/Row';
-import Text from '../_UI/Text';
 import breakpoints from '../../theme/breakpoints';
 import sizes from '../../theme/sizes';
-import colors from '../../theme/colors';
 import fonts from '../../theme/fonts';
 
-export default function SearchNotFound() {
+export default function Error() {
   return (
-    <Container>
+    <StyledContainer>
         <Content>
-            <StyledIcon>
-                <Icon name='search-not-found' />
-            </StyledIcon>
-            <Text 
-                name='title' 
-                color={colors.secondary}
-                $marginTop={sizes.medium}
-            >
-                Nenhum Resultado foi Encontrado!
-            </Text>
+            <ContentIcon>
+                <Icon name='error' color={colors.secondary} />
+            </ContentIcon>
+            <Text name='title' color={colors.secondary}>Ocorreu um erro inesperado!</Text>
         </Content>
-    </Container>
+    </StyledContainer>
   )
 }
 
-const Container = styled(Column)`
+const StyledContainer = styled(Column)`
     width: 100%;
-    align-items: center;
     height: 400px;
     justify-content: center;
 `;
@@ -38,9 +31,6 @@ const Content = styled(Column)`
     align-items: center;
     justify-content: center;
     text-align: center;
-    & > p {
-        font-size: ${fonts.sizes.subtitle};
-    }
     @media screen and (min-width: ${breakpoints.lg}) {
         text-align: unset;
         & > p {
@@ -48,12 +38,12 @@ const Content = styled(Column)`
         }
     }
 `;
-
-const StyledIcon = styled(Row)`
+const ContentIcon = styled(Row)`
     width: ${sizes.enormous};
     height: ${sizes.enormous};
     @media screen and (min-width: ${breakpoints.lg}) {
         width: 100%;
         height: 100%;
     }
+
 `

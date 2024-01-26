@@ -14,7 +14,7 @@ const spin = keyframes`
 
 export const StyledLoaderBox = styled(FullyCentered)`
     width: 100%;
-    height: auto;
+    height: 400px;
     background-color: transparent;
     margin: ${sizes.tiny} ${sizes.none};
 `;

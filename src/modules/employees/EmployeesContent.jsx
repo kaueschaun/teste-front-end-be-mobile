@@ -9,32 +9,19 @@ import { useEffect, useState } from "react"
 import debounce from "../../helpers/debounce"
 import SearchNotFound from "../../components/commons/SearchNotFound"
 import Loader from "../../components/_UI/Loader"
-import { FullyCentered } from "../../styled/alignment/Center"
 import sizes from "../../theme/sizes"
+import colors from "../../theme/colors"
+import Error from "../../components/commons/Error"
 
 export default function EmployeesContent() {
 
   const [employees, setEmployees] = useState([]);
   const [loading, setLoading] = useState(false)
-
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     getEmployees();
-  }, []);
-
-  function sanitizedParams(payload) {
-    
-    const data = {
-      name: capitalizeWords(payload) || '', //cria um metodo de capitalize para enviar sempre o nome certo para o
-      // job: capitalizeWords(payload) || '',
-    }
-    
-    if (!data.name) {
-      delete data.name
-    }
-
-    return data;
-  }
+  },[]);
 
   function capitalizeWords(str) {
     const words = str.split(' ');
@@ -49,25 +36,28 @@ export default function EmployeesContent() {
 
   async function getEmployees(payload = '') {
     setLoading(true);
-
+  
     try {
-      const {data} = await api.get(`/employees`, {
-        params: {
-          ...sanitizedParams(payload)
-        }
-      });
-      
-      setEmployees(data);
-      setTimeout(() => setLoading(false), 500); //Para simular o loading de um request assincrono
+      const { data } = await api.get(`/employees?q=${capitalizeWords(payload)}`);
+  
+      const filteredEmployees = data.filter(employee =>
+        employee.name.toLowerCase().includes(payload.toLowerCase()) ||
+        employee.job.toLowerCase().includes(payload.toLowerCase()) ||
+        employee.phone.includes(payload)
+      );
 
-    } catch (error) {
-      console.log(error)
-    } finally {
-      setTimeout(() => setLoading(false), 500); //Para simular o loading de um request assincrono
-    }
+      filteredEmployees.map(({ name, job, phone }) => ({ name, job, phone }));
+
+        setEmployees(filteredEmployees);
+    
+        setTimeout(() => setLoading(false), 500); // Para simular o loading de um request assíncrono
+    
+      } catch (error) {
+        setError(true);
+      } finally {
+        setTimeout(() => setLoading(false), 500); // Para simular o loading de um request assíncrono
+      }
   }
-
-
   const handleSearchInput = debounce((searchTerm) => {
     searchTerm ? getEmployees(searchTerm) : getEmployees()
   }, 500);
@@ -77,6 +67,7 @@ export default function EmployeesContent() {
       <StyledHeader>
         <Text 
           name='title'
+          color={colors.primaryDark}
         >
           Funcionários
         </Text>
@@ -90,26 +81,33 @@ export default function EmployeesContent() {
         </ContentSearch>
         
       </StyledHeader>
-
-      <MainContent>
-        {
-          loading 
-          ? <ContentLoader>
-              <Loader size='medium'/>  
-            </ContentLoader>
-          : (
-            !employees.length 
-            ? <ContentNotFound>
+      
+      {
+        loading ? (
+          <ContentLoader>
+            <Loader size='medium'/>  
+          </ContentLoader>
+        ) : (
+          error ? (
+            <ContentError>
+              <Error />
+            </ContentError>
+          ) : (
+            employees.length > 0 ? (
+              <MainContent>
+                <Table
+                  rows={employees}
+                  columns={['FOTO', 'NOME', 'CARGO', 'DATA DE ADMISSÃO', 'TELEFONE']}
+                />
+              </MainContent>
+            ) : (
+              <ContentNotFound>
                 <SearchNotFound />
               </ContentNotFound>
-            : <Table
-                rows={employees}
-                columns={['FOTO', 'NOME', 'CARGO', 'DATA DE ADMISSÃO', 'TELEFONE']}
-            />
+            )
           )
-        }
-      </MainContent>
-
+        )
+      }
     </Container>
   )
 }
@@ -142,14 +140,23 @@ const ContentSearch = styled.div`
 
 const MainContent = styled.div`
   width: 100%;
+  padding-bottom: 15px;
 `;
 
-const ContentLoader = styled(FullyCentered)`
+const ContentLoader = styled(Column)`
   width: 100%;
-  height: 400px;
+  display: flex;
+  justify-content: center;
 `;
 
-const ContentNotFound = styled(FullyCentered)`
+const ContentNotFound  = styled(Column)`
   width: 100%;
-  height: 400px;
+  display: flex;
+  justify-content: center;
+`;
+
+const ContentError  = styled(Column)`
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `;
