@@ -25,7 +25,7 @@ export default function InputSearch({
         onChange={(e) => toggleValue(e.target.value)}
      />
         <ContentIcon>
-            <Icon name='search' />
+            <Icon name='search' alt='Imagem Ilustrativa'/>
         </ContentIcon>
     </StyledInput>
   )
@@ -72,5 +72,5 @@ const Input = styled.input`
 InputSearch.propTypes = {
     // layout props
     placeholder: Proptypes.string,
-    onChangeValue: Proptypes.func, // Corrigir o tipo para uma função (func) ao invés de uma string
+    onChangeValue: Proptypes.func, 
 };

@@ -43,12 +43,14 @@ export default function  TableBodyMobile({data}) {
                             }
                             </StyledImage>
                             <ContentItem>
-                                <Text 
-                                    name='subtitle'
-                                    color={colors.primaryDark}
-                                >
-                                    {item.name}
-                                </Text>
+                                <ContainerName>
+                                    <Text 
+                                        name='subtitle'
+                                        color={colors.primaryDark}
+                                    >
+                                        {item.name}
+                                    </Text>
+                                </ContainerName>
                             </ContentItem>
                             <Arrow 
                                 {...(item.visible && { view: 'true' })}
@@ -138,7 +140,7 @@ const Content = styled(Column)`
 const StyledBody = styled.div`
     justify-content: space-between;
     border-bottom: 1px solid rgba(0, 0, 0, 0.20);
-    padding: 15px ${sizes.medium};
+    padding: ${sizes.little} ${sizes.medium};
     background: ${colors.white};
 `;
 
@@ -182,6 +184,17 @@ const Image = styled.img`
   height: 33px;
 `;
 
+const ContainerName = styled.div`
+  min-width: 120px;
+  max-width: auto;
+  justify-content: flex-start;
+  display: flex;
+  padding-left: ${sizes.little};
+  background: ${colors.white};
+  & > p {
+    background: ${colors.white};
+  }
+`;
 
 const ContentExtend = styled(Column)`
     visibility: hidden;

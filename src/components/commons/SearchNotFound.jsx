@@ -13,7 +13,7 @@ export default function SearchNotFound() {
     <Container>
         <Content>
             <StyledIcon>
-                <Icon name='search-not-found' />
+                <Icon name='search-not-found' alt='Imagem Ilustrativa'/>
             </StyledIcon>
             <Text 
                 name='title' 
@@ -56,4 +56,4 @@ const StyledIcon = styled(Row)`
         width: 100%;
         height: 100%;
     }
-`
+`;

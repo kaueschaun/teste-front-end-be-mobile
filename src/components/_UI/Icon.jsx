@@ -3,6 +3,7 @@ import Proptypes from 'prop-types'
 
 function Icon({
     // layout props
+    alt,
     marginTop,
     marginRight,
     marginBottom,
@@ -18,6 +19,7 @@ function Icon({
             marginRight={marginRight}
             marginBottom={marginBottom}
             marginLeft={marginLeft}
+            alt={alt}
         >
             <use href={`../../../assets/svg/icons.svg#${name}`} />
         </StyledSvg>
@@ -27,6 +29,7 @@ function Icon({
 Icon.propTypes = {
     // layout props
     marginTop: Proptypes.string,
+    alt: Proptypes.string,
     marginRight: Proptypes.string,
     marginBottom: Proptypes.string,
     marginLeft: Proptypes.string,

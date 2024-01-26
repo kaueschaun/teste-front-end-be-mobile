@@ -13,7 +13,7 @@ export default function Error() {
     <StyledContainer>
         <Content>
             <ContentIcon>
-                <Icon name='error' color={colors.secondary} />
+                <Icon name='error' color={colors.secondary} alt='Imagem Ilustrativa' />
             </ContentIcon>
             <Text name='title' color={colors.secondary}>Ocorreu um erro inesperado!</Text>
         </Content>

@@ -4,6 +4,7 @@ const sizes = {
     mini: '8px',
     tiny: '10px',
     small: '13px',
+    little: '15px',
     normal: '16px',
     intermediary: '18px',
     medium: '20px',

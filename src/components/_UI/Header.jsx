@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <Container>
         <ContentIcon>
-            <Icon name='logo'/>
+            <Icon name='logo' alt='Imagem Ilustrativa' />
         </ContentIcon>
     </Container>
   )

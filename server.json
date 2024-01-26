@@ -57,20 +57,28 @@
         "admission": "2015-09-10"
       },
       {
-        "id": 7,
-        "name": "Marina Ferreira",
-        "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-uma-pessoa-com-oculos_23-2149436191.jpg?w=740&t=st=1706166200~exp=1706166800~hmac=78d7c975064bb8389dfd48863e1b0db2abe46a5e5689b5efcedaff6e97c63a7b",
-        "job": "Analista",
-        "phone": "51984988765",
+        "id": 8,
+        "name": "Felipe Pereira",
+        "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-uma-pessoa-com-oculos-de-sol_23-2149436200.jpg?w=826&t=st=1706280334~exp=1706280934~hmac=0da9f570e5f12545e767f5fc977c3b359aad0f666f33a63bf240cf33c82d7cd9",
+        "job": "Front-end",
+        "phone": "54981558712",
         "admission": "2015-09-10"
       },
       {
-        "id": 7,
-        "name": "Marina Ferreira",
-        "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-uma-pessoa-com-oculos_23-2149436191.jpg?w=740&t=st=1706166200~exp=1706166800~hmac=78d7c975064bb8389dfd48863e1b0db2abe46a5e5689b5efcedaff6e97c63a7b",
-        "job": "Analista",
-        "phone": "51984988765",
+        "id": 9,
+        "name": "Roberta Souza",
+        "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-avatar-ou-perfil-humano_23-2150671153.jpg?w=826&t=st=1706280376~exp=1706280976~hmac=957985de598a262610abd08f3a6d46e6c2a356a1fbead88fb32b40d1d7d4eb7d",
+        "job": "Back-end",
+        "phone": "51999462333",
         "admission": "2015-09-10"
+      },
+      {
+        "id": 10,
+        "name": "Letica Soares",
+        "image": "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-avatar-ou-perfil-humano_23-2150671128.jpg?w=826&t=st=1706280399~exp=1706280999~hmac=b948fd3821210c6a885babb802b02159ebfa62541d0b4749c143fd3a877e98c3",
+        "job": "Gestor",
+        "phone": "53984661256",
+        "admission": "2012-06-06"
       }
     ]
           

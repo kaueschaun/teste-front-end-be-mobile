@@ -140,7 +140,7 @@ const ContentSearch = styled.div`
 
 const MainContent = styled.div`
   width: 100%;
-  padding-bottom: 15px;
+  padding-bottom: ${sizes.little};
 `;
 
 const ContentLoader = styled(Column)`

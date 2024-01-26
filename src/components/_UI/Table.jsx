@@ -30,9 +30,12 @@ export default function Table({
 }
 
 const StyledTable = styled.div`
-  margin-top: ${sizes.giant};
   border-radius: ${sizes.nano};
   width: 100%;
+  margin-top: ${sizes.medium};
+  @media screen and (min-width: ${breakpoints.lg}) {
+    margin-top: ${sizes.giant};
+  }
 `;
 
 const TableHeader = styled.div`

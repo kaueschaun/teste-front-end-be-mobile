@@ -27,12 +27,14 @@ export default function TableBodyDesktop({data}) {
           </StyledItem>
 
           <StyledItem>
-            <Text 
-              name='subtitle' 
-              color={colors.primaryDark}
-            >
-              {item.name ? item.name : 'Não Informado'}
-            </Text>  
+            <ContainerName>
+              <Text 
+                name='subtitle' 
+                color={colors.primaryDark}
+              >
+                {item.name ? item.name : 'Não Informado'}
+              </Text>  
+            </ContainerName>
           </StyledItem>
 
            <StyledItem>
@@ -86,9 +88,9 @@ const StyledBody = styled.div`
 const Content = styled.div`
   width: 100%;
   display: flex;
-  padding: 15px;
+  padding: ${sizes.little};
   justify-content: space-around;
-  padding: 15px;
+  padding: ${sizes.little};
   border-bottom: 1px solid rgba(0, 0, 0, 0.20);
   align-items: center;
   background: ${colors.white};
@@ -106,6 +108,17 @@ const StyledItem = styled.div`
   }
 `;
 
+const ContainerName = styled.div`
+  min-width: 120px;
+  max-width: auto;
+  justify-content: flex-start;
+  display: flex;
+  padding-left: ${sizes.tiny};
+  background: ${colors.white};
+  & > p {
+    background: ${colors.white};
+  }
+`;
 const ContainerText = styled.div`
   width: 100%;
   justify-content: center;
