@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import Content from '../components/main/Content'
-import EmployeesContent from '../modules/employees/EmployeesContent'
+import Content from '../components/employees/Content'
+import EmployeesContent from '../components/employees/EmployeesContent'
 import { Column } from '../styled/alignment/Column'
 import colors from '../theme/colors'
 import breakpoints from '../theme/breakpoints'

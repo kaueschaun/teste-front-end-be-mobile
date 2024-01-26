@@ -1,17 +1,17 @@
 import styled from "styled-components"
 import { Column } from "../../styled/alignment/Column"
-import InputSearch from "../../components/_UI/InputSearch"
-import Table from "../../components/_UI/Table"
+import InputSearch from "../_UI/InputSearch"
+import Table from "../_UI/Table"
 import breakpoints from "../../theme/breakpoints"
-import Text from "../../components/_UI/Text"
+import Text from "../_UI/Text"
 import { api } from "../../services/api"
 import { useEffect, useState } from "react"
 import debounce from "../../helpers/debounce"
-import SearchNotFound from "../../components/commons/SearchNotFound"
-import Loader from "../../components/_UI/Loader"
+import SearchNotFound from "../commons/SearchNotFound"
+import Loader from "../_UI/Loader"
 import sizes from "../../theme/sizes"
 import colors from "../../theme/colors"
-import Error from "../../components/commons/Error"
+import Error from "../commons/Error"
 
 export default function EmployeesContent() {
 
